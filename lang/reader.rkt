@@ -12,12 +12,12 @@ hyper-literate/lang
 #:info (wrapped-scribble-base-reader-info)
 (require "meta-first-line.rkt"
          (only-in scribble/base/reader
-                  scribble-base-reader-info
+                  scribble-base-info
                   scribble-base-language-info)
          "first-line-utils.rkt")
 
-(define orig-scribble-base-reader-info
-  (scribble-base-reader-info))
+(define orig-scribble-base-info
+  (scribble-base-info))
 
 (require syntax-color/scribble-lexer
          syntax-color/racket-lexer
@@ -84,4 +84,4 @@ hyper-literate/lang
            [else
             (read/at-exp in offset x-mode)]))]
       [else
-       (orig-scribble-base-reader-info key defval default)])))
+       (orig-scribble-base-info key defval default)])))
